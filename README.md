@@ -1,4 +1,4 @@
-# Lab 3-4. State Space Search
+# Lab 2. State Space Search
 
 ## TODO: 
 
