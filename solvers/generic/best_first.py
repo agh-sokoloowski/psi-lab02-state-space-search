@@ -23,7 +23,7 @@ class BestFirstSearch():
             node = self.frontier.pop()
         #   - if popped node is a goal, return it
         #     tip. use 'is_goal' method from Problem
-            if self.problem.is_goal(node):
+            if self.problem.is_goal(node.state):
                 return node
         #   - otherwise go through all its children (expand method of Tree)
             else:
