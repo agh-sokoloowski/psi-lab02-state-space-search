@@ -1,8 +1,8 @@
 from typing import Tuple, Optional
 from base.solver import P, Solver
-from solvers.utils import PriorityQueue
+from solvers.utils import PriorityQueue, Queue
 from solvers.utils import LIFO
-from tree import Node, Tree
+from tree import Node, Tree, node
 
 
 class IDDFS(Solver):
@@ -14,19 +14,40 @@ class IDDFS(Solver):
 
 
     def solve(self) -> Optional[Node]:
-        # TODO:
         # - if the root node is a goal, just return it
         #   tip. use 'is_goal' method from Problem
+        if self.problem.is_goal(self.root.state):
+            return self.root
         # - set depth to 1
+        depth = 1
+        while True:
         # - run self._depth_limited search
+            node, left = self._depth_limited_search(self.root, depth)
         #   * if it returned a node, return it!
-        #   * if there is no nodes left, return None 
+            if node is not None:
+                return node
+        #   * if there is no nodes left, return None
+            if not left:
+                return None
         #   * otherwise increment depth and repeat the limited search
-        raise NotImplementedError()
+            depth += 1
     
 
     def _depth_limited_search(self, root: Node, max_depth: int) -> Tuple[Optional[Node], bool]:
-        # TODO:
+        frontier = Queue
+        visited = {self.start}
+        frontier.push((self.root, False))
+        for i in range(1, max_depth):
+            node, left = frontier.pop()
+            if self.problem.is_goal(node):
+                return (node, left)
+            elif i == max_depth:
+                return (node, True)
+            else:
+                for child in self.tree.expand(self.problem, node):
+                    if child not in visited:
+                        visited.add(child.state)
+                        frontier.push((child, i == max_depth))
         # - do a DFS with depth limited by a given depth
         #   tip. base in on the Uninformed search you have already done by now
         # differences:
@@ -35,7 +56,7 @@ class IDDFS(Solver):
         # - this method return a tuple:
         #   * first element is the node if the method finds a goal state, otherwise it should be None
         #   * second element is a boolean telling whether there are any nodes left to be expanded
-        raise NotImplementedError()
+        return None
 
 
     def search_tree(self) -> Tree:
