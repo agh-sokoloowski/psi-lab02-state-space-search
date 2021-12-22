@@ -30,9 +30,9 @@ class BestFirstSearch():
                 for child in self.tree.expand(self.problem, node):
         #       - if child has not been visited (check self.visited dictionary)
         #         or its cost is better than the saved one
-                    if child not in self.visited or self.visited.get(child) > child.cost:
+                    if child.state not in self.visited or self.visited[child.state] > child.cost + self.visited[node.state]:
         #         * update cost in visited
-                        self.visited[child] = child.cost
+                        self.visited[child.state] = child.cost
         #         * push child onto frontier
                         self.frontier.push(child)
         # - return None if nothing happens

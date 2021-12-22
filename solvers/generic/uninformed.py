@@ -30,7 +30,7 @@ class UninformedSearch():
         #       - if child has not been visited (check self.visited set)
                     if child not in self.visited:
         #         * add child to visited
-                        self.visited.add(child)
+                        self.visited.add(child.state)
         #         * push child onto frontier
                         self.frontier.push(child)
         # - return None if nothing happens
