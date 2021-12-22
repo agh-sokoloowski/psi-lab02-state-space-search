@@ -1,7 +1,7 @@
 Dear Student,
 
 I regret to inform you that you've received only **3** out of 37 points for this assignment.\
-There still exist some issues that should be addressed before the deadline (2021-12-23 22:00:00 GMT). For further details, please refer to the following list:
+There still exist some issues that should be addressed before the deadline (2022-01-07 22:00:00 GMT). For further details, please refer to the following list:
 
 <details><summary>Best first search returns root if root is solution &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Best first search returns none when no solution found &gt;&gt; NotImplementedError</summary></details>
@@ -35,8 +35,8 @@ There still exist some issues that should be addressed before the deadline (2021
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Best first search path &gt;&gt; NotImplementedError</summary></details>
-<details><summary>Best first search path &gt;&gt; NotImplementedError</summary></details>
+<details><summary>Best first search path &gt;&gt; &#x27;LIFO&#x27; object is not iterable</summary></details>
+<details><summary>Best first search path &gt;&gt; &#x27;FIFO&#x27; object is not iterable</summary></details>
 
 -----------
 I remain your faithful servant\
