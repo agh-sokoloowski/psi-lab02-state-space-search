@@ -16,15 +16,24 @@ class BestFirstSearch():
     
 
     def solve(self) -> Optional[Node]:
-        # TODO:
         # - push root node to the frontier
+        self.frontier.push(self.root)
         # - pop nodes from the frontier as long as there any
+        for node in self.frontier:
+            self.frontier.pop()
         #   - if popped node is a goal, return it
         #     tip. use 'is_goal' method from Problem
+            if self.problem.is_goal(node):
+                return node
         #   - otherwise go through all its children (expand method of Tree)
+            else:
+                for child in node.children:
         #       - if child has not been visited (check self.visited dictionary)
         #         or its cost is better than the saved one
+                    if child not in self.visited or self.visited.get(child) > child.cost:
         #         * update cost in visited
+                        self.visited[child] = child.cost
         #         * push child onto frontier
+                        self.frontier.push(child)
         # - return None if nothing happens
-        raise NotImplementedError()
+        return None
