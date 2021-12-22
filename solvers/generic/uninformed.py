@@ -15,14 +15,23 @@ class UninformedSearch():
 
 
     def solve(self):
-        # TODO:
         # - push root node to the frontier
+        self.frontier.push(self.root)
         # - pop nodes from the frontier as long as there any
+        for node in self.frontier:
+            self.frontier.pop()
         #   - if popped node is a goal, return it
         #     tip. use 'is_goal' method from Problem
+            if self.problem.is_goal(node):
+                return node
         #   - otherwise go through all its children (expand method of Tree)
+            else:
+                for child in node.children:
         #       - if child has not been visited (check self.visited set)
+                    if child not in self.visited:
         #         * add child to visited
+                        self.visited.add(child)
         #         * push child onto frontier
+                        self.frontier.push(child)
         # - return None if nothing happens
-        raise NotImplementedError()
+        return None
