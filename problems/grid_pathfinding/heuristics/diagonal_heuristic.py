@@ -9,9 +9,10 @@ class GridDiagonalHeuristic(Heuristic[GridCoord]):
         self.problem = problem
 
     def __call__(self, state: GridCoord) -> float:
-        # TODO:
         # Calculate a diagonal distance:
         # - 'state' is the current state 
         # - 'self.problem.goal' is the goal state
         # - 'self.problem.diagonal_weight' is cost of making a diagonal move
-        raise NotImplementedError()
+        delta_x = abs(state.x - self.problem.goal.x)
+        delta_y = abs(state.y - self.problem.goal.y)
+        return self.problem.diagonal_weight * min(delta_x, delta_y) + max(delta_x, delta_y)

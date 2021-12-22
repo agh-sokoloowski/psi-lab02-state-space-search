@@ -10,9 +10,8 @@ class GridEuclideanHeuristic(Heuristic[GridCoord]):
         self.problem = problem
 
     def __call__(self, state: GridCoord) -> float:
-        # TODO:
         # Calculate an euclidean distance:
         # - 'state' is the current state 
         # - 'self.problem.goal' is the goal state
-        raise NotImplementedError()
+        return sqrt((state.x - self.problem.goal.x)**2 + (state.y - self.problem.goal.y)**2)
   
