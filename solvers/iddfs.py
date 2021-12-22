@@ -36,18 +36,17 @@ class IDDFS(Solver):
     def _depth_limited_search(self, root: Node, max_depth: int) -> Tuple[Optional[Node], bool]:
         frontier = Queue
         visited = {self.start}
-        frontier.push((self.root, False))
+        frontier.push((root, False))
         for i in range(1, max_depth):
             node, left = frontier.pop()
             if self.problem.is_goal(node.state):
-                return (node, left)
-            elif i == max_depth:
-                return (node, True)
-            else:
-                for child in self.tree.expand(self.problem, node):
-                    if child not in visited:
-                        visited.add(child.state)
-                        frontier.push((child, i == max_depth))
+                return node, left
+            if i == max_depth:
+                return node, True
+            for child in self.tree.expand(self.problem, node):
+                if child not in visited:
+                    visited.add(child.state)
+                    frontier.push((child, i == max_depth))
         # - do a DFS with depth limited by a given depth
         #   tip. base in on the Uninformed search you have already done by now
         # differences:
