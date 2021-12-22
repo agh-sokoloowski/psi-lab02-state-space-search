@@ -39,7 +39,7 @@ class IDDFS(Solver):
         frontier.push((self.root, False))
         for i in range(1, max_depth):
             node, left = frontier.pop()
-            if self.problem.is_goal(node):
+            if self.problem.is_goal(node.state):
                 return (node, left)
             elif i == max_depth:
                 return (node, True)
