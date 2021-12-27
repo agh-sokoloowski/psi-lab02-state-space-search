@@ -15,4 +15,4 @@ class GridDiagonalHeuristic(Heuristic[GridCoord]):
         # - 'self.problem.diagonal_weight' is cost of making a diagonal move
         delta_x = abs(state.x - self.problem.goal.x)
         delta_y = abs(state.y - self.problem.goal.y)
-        return self.problem.diagonal_weight * min(delta_x, delta_y) + max(delta_x, delta_y)
+        return self.problem.diagonal_weight * (min(delta_x, delta_y) + max(delta_x, delta_y))
