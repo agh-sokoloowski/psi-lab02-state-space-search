@@ -28,11 +28,11 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         for i, col in enumerate(goal.columns):
             for block in col:
                 excepted_fundaments[block] = []
-                for j, col in enumerate(goal.columns):
+                for j, _col in enumerate(goal.columns):
                     if j == i:
                         continue
-                    if block in col:
-                        excepted_fundaments[block].append(col[col.index(block) + 1])
+                    if block in _col:
+                        excepted_fundaments[block].append(_col[col.index(block) + 1])
         return excepted_fundaments
 
     def __call__(self, state: BlocksWorldState) -> int:
