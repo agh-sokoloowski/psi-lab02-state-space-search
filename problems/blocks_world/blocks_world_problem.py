@@ -20,7 +20,10 @@ class BlocksWorldProblem(Problem[BlocksWorldState, BlocksWorldAction]):
             if len(col) > 0:
                 for j, _ in enumerate(state.columns):
                     if i != j:
-                        legal_actions.append(BlocksWorldAction(i, j))
+                        action = BlocksWorldAction()
+                        action.column_from = i
+                        action.column_to = j
+                        legal_actions.append(action)
         return legal_actions
 
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
