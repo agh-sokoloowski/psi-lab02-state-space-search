@@ -14,6 +14,6 @@ class NPuzzleTilesOutOfPlaceHeuristic(NPuzzleAbstractHeuristic):
         positions = self.positions(state)
         sum = 0
         for i in range(len(positions)):
-            if positions[i] != self.goal_coords[i]:
+            if positions[i][0] != self.goal_coords[i][0] or positions[i][1] != self.goal_coords[i][1]:
                 sum += 1
         return sum
