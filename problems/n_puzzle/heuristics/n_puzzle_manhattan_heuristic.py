@@ -14,6 +14,8 @@ class NPuzzleManhattanHeuristic(NPuzzleAbstractHeuristic):
         # tip 3. self.goal_coords contains such a dictionary for the goal state
         positions = self.positions(state)
         sum = 0
-        for i in range(len(positions)):
-            sum += abs(positions[i][0] - self.goal_coords[i][0]) + abs(positions[i][1] - self.goal_coords[i][1])
+        for tile in positions:
+            pos_x, pos_y = positions[tile]
+            goal_x, goal_y = self.goal_coords[tile]
+            sum += abs(pos_x - goal_x) + abs(pos_y - goal_y)
         return sum
