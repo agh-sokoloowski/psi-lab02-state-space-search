@@ -7,11 +7,11 @@ There still exist some issues that should be addressed before the deadline (2022
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; &#x27;int&#x27; object is not subscriptable</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; &#x27;int&#x27; object is not subscriptable</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
+<details><summary>Npuzzle heuristic &gt;&gt; &#x27;int&#x27; object is not subscriptable</summary></details>
 <details><summary>Best first search path &gt;&gt; unhashable type: &#x27;Node&#x27;</summary></details>
 <details><summary>Best first search path &gt;&gt; unhashable type: &#x27;Node&#x27;</summary></details>
 
