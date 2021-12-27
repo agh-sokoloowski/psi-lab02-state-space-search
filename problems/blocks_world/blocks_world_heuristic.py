@@ -28,7 +28,7 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         for i, col in enumerate(goal.columns):
             for b, block in enumerate(col):
                 excepted_fundaments[block] = []
-                for j in range(b, len(col)):
+                for j in range(b):
                     excepted_fundaments[block].append(col[j])
                 # for j, _col in enumerate(goal.columns):
                 #     if j == i:
