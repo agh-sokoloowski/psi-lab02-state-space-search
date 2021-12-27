@@ -8,8 +8,8 @@ There still exist some issues that should be addressed before the deadline (2022
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
-<details><summary>Grid heuristic &gt;&gt; expected to receive: 3, got: 0 (heuristic: GridDiagonalHeuristic)</summary></details>
-<details><summary>Grid heuristic &gt;&gt; expected to receive: 3, got: 0 (heuristic: GridDiagonalHeuristic)</summary></details>
+<details><summary>Grid heuristic &gt;&gt; expected to receive: 3, got: 0.0 (heuristic: GridDiagonalHeuristic)</summary></details>
+<details><summary>Grid heuristic &gt;&gt; expected to receive: 3, got: 0.0 (heuristic: GridDiagonalHeuristic)</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
 <details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
