@@ -13,11 +13,11 @@ class NPuzzleTilesOutOfPlaceHeuristic(NPuzzleAbstractHeuristic):
         # tip 3. self.goal_coords contains such a dictionary for the goal state
         positions = self.positions(state)
         sum = 0
-        for position in positions:
+        for tile, position in positions:
             position_x = position[0]
             position_y = position[1]
-            goal_x = self.goal_coords[position][0]
-            goal_y = self.goal_coords[position][1]
+            goal_x = self.goal_coords[tile][0]
+            goal_y = self.goal_coords[tile][1]
             if position_x != goal_x or position_y != goal_y:
                 sum += 1
         return sum
