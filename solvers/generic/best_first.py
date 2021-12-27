@@ -34,6 +34,6 @@ class BestFirstSearch():
                 return node
             for child in self.tree.expand(self.problem, node):
                 if child.state not in self.visited or self.visited[child.state] > child.cost:
-                    self.visited.update[child.state] = child.cost
+                    self.visited[child.state] = child.cost
                     self.frontier.push(child)
         return None
