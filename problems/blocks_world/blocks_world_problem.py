@@ -15,7 +15,13 @@ class BlocksWorldProblem(Problem[BlocksWorldState, BlocksWorldAction]):
         # - return all legal actions in the given state
         # tip 1. you can only move blocks from not empty columns
         # tip 2. you can't move move column to the same column it already stands at
-        raise NotImplementedError()
+        legal_actions = []
+        for i, col in enumerate(state.columns):
+            if len(col) > 0:
+                for j, _ in enumerate(state.columns):
+                    if i != j:
+                        legal_actions.append(BlocksWorldAction(i, j))
+        return legal_actions
 
     def take_action(self, state: BlocksWorldState, action: BlocksWorldAction) -> BlocksWorldState:
         return action.apply(state)
