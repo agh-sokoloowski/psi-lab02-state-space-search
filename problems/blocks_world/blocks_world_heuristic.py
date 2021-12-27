@@ -13,21 +13,41 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         self.expected_fundaments = self._calculate_expected_fundaments(problem.goal)
 
     def _calculate_expected_columns(self, goal: BlocksWorldState) -> Dict[str, int]:
-        # TODO:
         # return a dict of form:
         # { <block name> : <index of column in the goal state> }
-        raise NotImplementedError()
+        expected_columns = {}
+        for i, col in enumerate(goal.columns):
+            for block in col:
+                expected_columns[block] = i
+        return expected_columns
 
     def _calculate_expected_fundaments(self, goal: BlocksWorldState) -> Dict[str, List[str]]:
-        # TODO:
         # return a dict of form:
         # { <block name> : <list of the blocks below it in the goal state> }
-        raise NotImplementedError()
+        excepted_fundaments = {}
+        for i, col in enumerate(goal.columns):
+            for block in col:
+                excepted_fundaments[block] = []
+                for j, col in enumerate(goal.columns):
+                    if j == i:
+                        continue
+                    if block in col:
+                        excepted_fundaments[block].append(col[col.index(block) + 1])
+        return excepted_fundaments
 
     def __call__(self, state: BlocksWorldState) -> int:
-        # TODO:
         # - calculate how many blocks are in the incorrect columns
         # - calculate how many blocks have incorrect block below
         # - return number of incorrect columns plus twice the number of incorrect blocks below
         # tip. use self.expected_clumns and self.expected_fundaments
-        raise NotImplementedError()
+        incorrect_columns = 0
+        incorrect_fundaments = 0
+        for i, col in enumerate(state.columns):
+            if i != self.expected_columns[col[0]]:
+                incorrect_columns += 1
+        for i, col in enumerate(state.columns):
+            for block in col:
+                if block in self.expected_fundaments[block]:
+                    if self.expected_fundaments[block][self.expected_fundaments[block].index(block)] != col[col.index(block) + 1]:
+                        incorrect_fundaments += 1
+        return incorrect_columns + 2 * incorrect_fundaments
