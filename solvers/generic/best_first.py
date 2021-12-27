@@ -33,7 +33,7 @@ class BestFirstSearch():
             if self.problem.is_goal(node.state):
                 return node
             for child in self.tree.expand(self.problem, node):
-                if child.state not in self.visited or self.visited.get(child.state) > child.cost + self.visited.get(node.state):
-                    self.visited.update({child.state: child.cost})
+                if child.state not in self.visited or self.visited[child.state] > child.cost:
+                    self.visited.update[child.state] = child.cost
                     self.frontier.push(child)
         return None
