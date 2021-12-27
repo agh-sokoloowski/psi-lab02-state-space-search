@@ -1,14 +1,11 @@
 Dear Student,
 
-I'm happy to announce that you've managed to get **29** out of 37 points for this assignment.\
+I'm happy to announce that you've managed to get **32** out of 37 points for this assignment.\
 There still exist some issues that should be addressed before the deadline (2022-01-07 22:00:00 GMT). For further details, please refer to the following list:
 
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
 <details><summary>Block naive heuristic &gt;&gt; 0</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
-<details><summary>Npuzzle heuristic &gt;&gt; 0</summary></details>
 <details><summary>Best first search path &gt;&gt; unhashable type: &#x27;Node&#x27;</summary></details>
 <details><summary>Best first search path &gt;&gt; unhashable type: &#x27;Node&#x27;</summary></details>
 
