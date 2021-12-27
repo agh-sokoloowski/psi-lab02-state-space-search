@@ -7,8 +7,7 @@ class BlocksWorldAction:
     column_from: int
     column_to: int
 
-    def apply(self, state: BlocksWorldState) -> BlocksWorldState:
-        # TODO:
+    def apply(self, state: BlocksWorldState) -> BlocksWorldState:\
         # - create a new state by applying the action
         #   (move block from 'self.column_from' to 'self.column_to')
         # tip. remember to not modify the current state!
