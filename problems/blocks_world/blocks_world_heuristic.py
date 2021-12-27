@@ -39,15 +39,17 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         # - calculate how many blocks are in the incorrect columns
         # - calculate how many blocks have incorrect block below
         # - return number of incorrect columns plus twice the number of incorrect blocks below
-        # tip. use self.expected_clumns and self.expected_fundaments
+        # tip. use self.expected_columns and self.expected_fundaments
         incorrect_columns = 0
         incorrect_fundaments = 0
         for i, col in enumerate(state.columns):
-            if i != self.expected_columns[col[0]]:
+            if col != self.expected_columns[i]:
                 incorrect_columns += 1
+
         for i, col in enumerate(state.columns):
             for block in col:
                 if block in self.expected_fundaments[block]:
-                    if self.expected_fundaments[block][self.expected_fundaments[block].index(block)] != col[col.index(block) + 1]:
+                    if self.expected_fundaments[block][self.expected_fundaments[block].index(block)] != col[col.index(block)]:
                         incorrect_fundaments += 1
-        return incorrect_columns + 2 * incorrect_fundaments
+                        
+        return incorrect_columns + (2 * incorrect_fundaments)
