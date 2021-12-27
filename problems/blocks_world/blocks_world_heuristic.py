@@ -40,7 +40,8 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         incorrect_columns = 0
         incorrect_fundaments = 0
         
-        for block, idx in self.expected_columns:
+        for block in self.expected_columns:
+            idx = self.expected_columns[block]
             if block not in state.columns[idx]:
                 incorrect_columns += 1
 
