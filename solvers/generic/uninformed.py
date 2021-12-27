@@ -30,9 +30,8 @@ class UninformedSearch():
             node = self.frontier.pop()
             if self.problem.is_goal(node.state):
                 return node
-            else:
-                for child in self.tree.expand(self.problem, node):
-                    if child not in self.visited:
-                        self.visited.add(child.state)
-                        self.frontier.push(child)
+            for child in self.tree.expand(self.problem, node):
+                if child not in self.visited:
+                    self.visited.add(child.state)
+                    self.frontier.push(child)
         return None
