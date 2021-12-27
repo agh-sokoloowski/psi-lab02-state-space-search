@@ -11,7 +11,6 @@ class BlocksWorldProblem(Problem[BlocksWorldState, BlocksWorldAction]):
         self.goal = goal
 
     def actions(self, state: BlocksWorldState) -> List[BlocksWorldAction]:
-        # TODO:
         # - return all legal actions in the given state
         # tip 1. you can only move blocks from not empty columns
         # tip 2. you can't move move column to the same column it already stands at
