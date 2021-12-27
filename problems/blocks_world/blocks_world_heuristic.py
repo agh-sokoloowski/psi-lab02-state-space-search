@@ -25,7 +25,7 @@ class BlocksWorldNaiveHeuristic(Heuristic):
         # return a dict of form:
         # { <block name> : <list of the blocks below it in the goal state> }
         excepted_fundaments = {}
-        for i, col in enumerate(goal.columns):
+        for col in goal.columns:
             for b, block in enumerate(col):
                 excepted_fundaments[block] = []
                 for j in range(b):
