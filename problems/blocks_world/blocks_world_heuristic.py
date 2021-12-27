@@ -45,9 +45,10 @@ class BlocksWorldNaiveHeuristic(Heuristic):
             fundaments = self.expected_fundaments[block]
             if block not in state.columns[idx]:
                 incorrect_columns += 1
-            for f in fundaments:
-                if f not in state.columns[idx]:
-                    incorrect_fundaments += 1
-                    break
+            else:
+                for f in fundaments:
+                    if f not in state.columns[idx]:
+                        incorrect_fundaments += 1
+                        break
                         
         return incorrect_columns + (2 * incorrect_fundaments)
