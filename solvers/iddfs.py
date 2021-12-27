@@ -60,4 +60,3 @@ class IDDFS(Solver):
 
     def search_tree(self) -> Tree:
         return self.tree
-        
