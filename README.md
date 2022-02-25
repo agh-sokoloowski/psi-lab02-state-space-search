@@ -1,5 +1,7 @@
 # Lab 2. State Space Search
 
+[![wakatime](https://wakatime.com/badge/github/agh-sokoloowski/psi-lab02-state-space-search.svg)](https://wakatime.com/badge/github/agh-sokoloowski/psi-lab02-state-space-search)
+
 ## TODO: 
 
 Fill missing code according to the `TODO:` comments in the following files:
